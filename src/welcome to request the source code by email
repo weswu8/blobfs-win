@@ -1,0 +1,63 @@
+# ================================================================================
+# ++++++++++++++++++ blobfs configurations  +++++++++++++++++++++++++++++++++++++++
+# ================================================================================
+# Azure storage account connection string
+Storage_Connection_String = your-storage-account-connection-string
+
+# Charset
+charset = UTF-8
+
+# the prefix of the blobs that will be used as the mounted blobfs root,
+# e.g., /container1/blob1/; defaults to /
+blob_prefix = /
+
+# Desired local mount point for BlobFs
+mount_point = /mnt/blobfs
+
+# the user id for the BlogFs, default value is the caller user id
+# default value is :-1.
+uid = -1
+
+# the group id for the BlogFs, default value is the group idof teh caller
+# default value is :-1.
+gid = -1
+
+
+# In the Debug Mode, the debug messages will be displayed in the console
+debug_enabled =  true
+
+# the log level, should be : production, development
+log_environment =  production
+
+# if one source of the blobs will be mounted by more than one host, you should enable the cluster mode
+# in the cluster mode, blobfish will manage the cache distributedly
+cluster_enabled = true
+
+# This is olny needed for cluster mode, Azure service bus connection string
+service_bus_connection_string = your-service-bus-connection-string
+
+# This is olny needed for cluster mode, Azure service bus topic,
+# will use this topic to synchronize the distributed cache across multiple hosts
+service_bus_topic = your-topic
+
+# This is olny needed for cluster mode, Azure service bus subscription of the topic,
+# each host should has the dedicated subscription
+service_bus_subscription = your-subscription
+
+# change the block blob to append blob automatically, 
+# this will be triggered when you open a read only file with the append mode. 
+# caution for large blob, this will consume more time
+# e.g., echo "new line" >> readonlyfile
+auto_change_block_blob_to_append_blob = true
+
+# the buffer size for read, blobfs will proactively buffer the data according to this value.
+# default is 4MB:  4 * 1024 * 1024 = 4194304
+read_buffer_size = 4194304
+
+# the buffer size for write, blobfs will cache the data according to this value.
+# default is 4MB:  4 * 1024 * 1024 = 4194304
+write_buffer_size = 4194304
+
+# the chunk size of the block blob, blobfs will upload the cached data according to this value.
+# default is 4MB:  4 * 1024 * 1024 = 4194304
+block_blob_upload_chunk_size = 4194304
