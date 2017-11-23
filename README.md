@@ -76,6 +76,7 @@ It is highly recommended that you should config it as a windows services.
 	-// you also can do these actions against a existing file, this also works, but the time depends on the size of the file.
 		
 * Programming way
+
 	-FileWriter fw = new FileWriter("G:\\container1\\append.log", true)  // java 1.7+
 	
 	-applendFile = open("G:\\container1\\append.log",' a+') // Python
@@ -98,9 +99,12 @@ It is highly recommended that you should config it as a windows services.
 * In some cases for the desktop user, right-click these files (*.PPT(X), *.DOC(X)) may casue very slow response. 
 
 ## Supported platforms
-*Linux : [blobfs](https://github.com/wesley1975/blobfs)
-*MacOS (via osxfuse): [blobfs](https://github.com/wesley1975/blobfs)
-*windows: [blobfs-win](https://github.com/wesley1975/blobfs-win)
+* Linux : [blobfs](https://github.com/wesley1975/blobfs)
+
+* MacOS (via osxfuse): [blobfs](https://github.com/wesley1975/blobfs)
+
+* windows: [blobfs-win](https://github.com/wesley1975/blobfs-win)
+
 
 ## Command Line Usage
 	usage: Blobfs-Win OPTIONS
