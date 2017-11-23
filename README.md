@@ -21,9 +21,9 @@ base on the lots of feedbacks, in version 0.0.3, I made these major updates:
 ## Features:
 * Implemented these winfsp functions: GetVolumeInfo,SetVolumeLabel, GetSecurityByName, GetFileInfo, open, Create, Read, Write, Cleanup, Close, SetBasicInfo, SetFileSize, CanDelete, Rename, Overwrite, ReadDirectoryEntry, GetDirInfoByName.
 * Allow mount multiple containers (or part of them) as the local folder.
-* Cluster enabled: It supports mount the same containers/blobs across multiple nodes. Theses files can be shared via these nodes. The caches of these nodes are synchronized via azure queuq storage.
+* Cluster enabled: It supports mount the same containers/blobs across multiple nodes. Theses files can be shared via these nodes. The caches of these nodes are synchronized via azure queue storage.
 * Use blob leases as the distributed locking mechanism across multiple nodes. The blob will be locked exclusively when it is written. 
-* File’s attribute is cached for better performance, the cache are synchronized via azure queuq storage.
+* File’s attribute is cached for better performance, the cache are synchronized via azure queue storage.
 * The contents are pre-cached by chunks when there is read operation. This will eliminate the times of http request and increase the performance greatly. 
 * Multi-part uploads are used for the write operation. Data is buffered firstly and then be uploaded if the buffer size exceed the threshold. This also can eliminate the times of http request and increase the performance greatly. 
 * You can edit the file content on the fly, especially recommend for the small file, It does not need download, edit and then upload.
@@ -66,15 +66,22 @@ It is highly recommended that you should config it as a windows services.
 ## How to create a append blob
 * Windows UI way
 	1.right-click in the folder of blobfs-win
+	
 	2.choose new file, and rename it to append.log  // this will create a empty block blob.
+	
 	3.right-click the append.log, and then uncheck the readonly flag in the the popup properties windows. click ok. 
-		// this will change the underlying block blob to append blob automatically. 
-		// you also can do these actions against a existing file, this also works, but the time depends on the size of the file.
+	
+	-// this will change the underlying block blob to append blob automatically. 
+	
+	-// you also can do these actions against a existing file, this also works, but the time depends on the size of the file.
 		
 * Programming way
-	FileWriter fw = new FileWriter("G:\\container1\\append.log", true)  // java 1.7+
-	applendFile = open("G:\\container1\\append.log",' a+') // Python
-	System.IO.StreamWriter w = File.AppendText("G:\\container1\\append.log") // C#
+	-FileWriter fw = new FileWriter("G:\\container1\\append.log", true)  // java 1.7+
+	
+	-applendFile = open("G:\\container1\\append.log",' a+') // Python
+	
+	-System.IO.StreamWriter w = File.AppendText("G:\\container1\\append.log") // C#
+	
 	...
 
 ## Performance Test
@@ -91,9 +98,9 @@ It is highly recommended that you should config it as a windows services.
 * In some cases for the desktop user, right-click these files (*.PPT(X), *.DOC(X)) may casue very slow response. 
 
 ## Supported platforms
--Linux : [blobfs](https://github.com/wesley1975/blobfs)
--MacOS (via osxfuse): [blobfs](https://github.com/wesley1975/blobfs)
--windows: [blobfs-win](https://github.com/wesley1975/blobfs-win)
+*Linux : [blobfs](https://github.com/wesley1975/blobfs)
+*MacOS (via osxfuse): [blobfs](https://github.com/wesley1975/blobfs)
+*windows: [blobfs-win](https://github.com/wesley1975/blobfs-win)
 
 ## Command Line Usage
 	usage: Blobfs-Win OPTIONS
