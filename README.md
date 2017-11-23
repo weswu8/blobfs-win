@@ -1,6 +1,7 @@
 BlobFs-Win
 =====
 ![blobfs-win demo](doc/blobfs-win.gif)
+
 BlobFs is a distributed [FUSE](http://fuse.sourceforge.net) based file system backed by [Microsoft azure blob storage service](https://azure.microsoft.com/en-us/services/storage/blobs/). It allows you to mount the containers/blobs in the storage account as a the local folder/driver. , no matter it is a Linux system or a Windows system. It support the cluster mode. you can mount the blob container (or part of it) across multiple linux and windows nodes.
 
 ## Important Notes:
