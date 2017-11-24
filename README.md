@@ -66,18 +66,7 @@ It is highly recommended that you should config it as a windows services.
 * For container creation in windows UI, this will fail if your windows are non-english. this is by design from azure. you can use cli to create it, mkdir newcontainer
 
 ## How to create a append blob
-* Windows UI way
 
-	1.right-click in the folder of blobfs-win
-	
-	2.choose new file, and rename it to append.log  // this will create a empty block blob.
-	
-	3.right-click the append.log, and then uncheck the readonly flag in the the popup properties windows. click ok. 
-	
-	-// this will change the underlying block blob to append blob automatically. 
-	
-	-// you also can do these actions against a existing file, this also works, but the time depends on the size of the file.
-		
 * Programming way
 
 	-FileWriter fw = new FileWriter("G:\\container1\\append.log", true)  // java 1.7+
