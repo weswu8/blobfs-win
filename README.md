@@ -67,6 +67,7 @@ It is highly recommended that you should config it as a windows services.
 
 ## How to create a append blob
 * Windows UI way
+
 	1.right-click in the folder of blobfs-win
 	
 	2.choose new file, and rename it to append.log  // this will create a empty block blob.
@@ -98,7 +99,8 @@ It is highly recommended that you should config it as a windows services.
 * Due to the overhead of fuse system, the performance will be expected slower than native file system. 
 * For the file copy, the blobfs will use read out - then write in to new blob mode. this will spent more time for large files/folders.
 * For the page blob, currently, should be, but it is not well tested yet. it may casue file interruption. 
-* In some cases for the desktop user, right-click these files (*.PPT(X), *.DOC(X)) may casue very slow response. 
+* In some cases for the desktop user, right-click these files (*.PPT(X), *.DOC(X)) may casue very slow response.
+* In Windows UI, copy the folder with many small files will be very slow. you can zip it. use robocopy or other tools.
 
 ## Supported platforms
 * Linux : [blobfs](https://github.com/wesley1975/blobfs)
