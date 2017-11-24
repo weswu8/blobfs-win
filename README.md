@@ -63,6 +63,7 @@ It is highly recommended that you should config it as a windows services.
 ## Tips
 * the block blob is read only by default. marked with read only flag in the popup properties windows.
 * the append blob is marked with the normal file without the read only flag in the popup properties windows.
+* For container creation in windows UI, this will fail if your windows are non-english. this is by design from azure. you can use cli to create it, mkdir newcontainer
 
 ## How to create a append blob
 * Windows UI way
