@@ -71,17 +71,25 @@ It is highly recommended that you should config it as a windows services.
 
 	// java 1.7+
 	FileWriter appendFile = new FileWriter("G:\\\\share\\\\append.log", true);
+	
 	appendFile.write("this is a append file");
+	
 	appendFile.close();
+	
 	
 	// Python
 	appendFile = open("G:\\\\container1\\\\append.log",' a+') 
+	
 	appendFile.write("this is a append file");
+	
 	appendFile.close();
+	
 	
 	// C#
 	System.IO.StreamWriter appendFile = File.AppendText("G:\\\\container1\\\\append.log")
+	
 	appendFile.WriteLine("this is a append file");
+	
 	
 	...
 
