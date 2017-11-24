@@ -28,7 +28,7 @@ base on the lots of feedbacks, in version 0.0.3, I made these major updates:
 * The contents are pre-cached by chunks when there is read operation. This will eliminate the times of http request and increase the performance greatly. 
 * Multi-part uploads are used for the write operation. Data is buffered firstly and then be uploaded if the buffer size exceed the threshold. This also can eliminate the times of http request and increase the performance greatly. 
 * You can edit the file content on the fly, especially recommend for the small file, It does not need download, edit and then upload.
-* Append mode is supported, you can append the new line to the existing blob directly. this is more friendly for logging operation. And it can change the block blob to append blob automatically.
+* Append mode is supported, you can append the new line to the existing blob directly. this is more friendly for logging operation.
 * Use server-side copy for move, rename operations, more efficient for big files and folders.
 
 ## Architecture and introduction
