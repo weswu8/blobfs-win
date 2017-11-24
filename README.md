@@ -69,11 +69,19 @@ It is highly recommended that you should config it as a windows services.
 
 * Programming way
 
-	-FileWriter fw = new FileWriter("G:\\container1\\append.log", true)  // java 1.7+
+	// java 1.7+
+	FileWriter appendFile = new FileWriter("G:\\\\share\\\\append.log", true);
+	appendFile.write("this is a append file");
+	appendFile.close();
 	
-	-applendFile = open("G:\\container1\\append.log",' a+') // Python
+	// Python
+	appendFile = open("G:\\\\container1\\\\append.log",' a+') 
+	appendFile.write("this is a append file");
+	appendFile.close();
 	
-	-System.IO.StreamWriter w = File.AppendText("G:\\container1\\append.log") // C#
+	// C#
+	System.IO.StreamWriter appendFile = File.AppendText("G:\\\\container1\\\\append.log")
+	appendFile.WriteLine("this is a append file");
 	
 	...
 
