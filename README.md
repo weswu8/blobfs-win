@@ -13,6 +13,14 @@ BlobFs is a distributed [FUSE](http://fuse.sourceforge.net) based file system ba
 Object storage is one of the most fundamental topic you'll encounter when you decide to start your cloud journey.The main goal of the project is to make azure storage service easy to use for Linux and windows box.
 
 ## Key Updates:
+
+### New features since v0.0.4 :
+
+* read and write data with multiple threads, more faster and stable.
+* Page blob is full supported.
+
+### New features since v0.0.3 :
+
 base on the lots of feedbacks, in version 0.0.3, I made these major updates:
 * Ported the blobfs to windows platform. It became a universal solution. 
 * Improve the performance of list/rename/delete operation by enabling the multi-threading way. now it can list/rename/delete the thousands of items within few seconds.
