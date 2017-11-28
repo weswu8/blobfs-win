@@ -14,10 +14,15 @@ Object storage is one of the most fundamental topic you'll encounter when you de
 
 ## Key Updates:
 
+### Bump the version to v1.0.0
+
+* Optimize performance for large content reads and writes
+* Optimize performance for multiple files concurrently read/write
+
 ### New features since v0.0.4 :
 
 * read and write data with multiple threads, more faster and stable.
-* Page blob is full supported.
+* Page blob is fully supported.
 
 ### New features since v0.0.3 :
 
